@@ -1,0 +1,380 @@
+{
+    "var": {
+        "prefix": "var",
+        "body": [
+            "(-> ${1:variable} ${2:value})"
+        ],
+        "description": "Assign value to a varaible"
+    },
+    "cast": {
+        "prefix": "cast",
+        "body": [
+            "(${1:original}->${2:target} ${3:expression})"
+        ],
+        "description": "Cast type"
+    },
+    "if/then/else": {
+        "prefix": "if/then/else",
+        "body": [
+            "(if ${1:condition} ${2:then-expression} ${3:else-expression})"
+        ],
+        "description": "if-then-else snippets"
+    },
+    "if/then": {
+        "prefix": "if/then",
+        "body": [
+            "(if ${1:condition} ${2:then-expression})"
+        ],
+        "description": "if-then snippets"
+    },
+    "def": {
+        "prefix": "def",
+        "body": [
+            "(def ${1:name} ${2:vars} ${3:body})"
+        ],
+        "description": "define a function"
+    },
+    "def?": {
+        "prefix": "def?",
+        "body": [
+            "(def? ${1:expression})"
+        ],
+        "description": "check if an expression is defined"
+    },
+    "defexpr": {
+        "prefix": "defexpr",
+        "body": [
+            "(defexpr ${1:name} ${2:vars} ${3:expression})"
+        ],
+        "description": "define an expression"
+    },
+    "deflazy": {
+        "prefix": "deflazy",
+        "body": [
+            "(deflazy ${1:name} ${2:vars} ${3:expression})"
+        ],
+        "description": "define a lazy evaluate function"
+    },
+    "lambda": {
+        "prefix": "lambda",
+        "body": [
+            "(lambda ${1:vars} ${2:body})"
+        ],
+        "description": "define a anonymous function"
+    },
+    "expr": {
+        "prefix": "expr",
+        "body": [
+            "(expr ${1:name} ${2:body})"
+        ],
+        "description": "define an expression"
+    },
+    "force run": {
+        "prefix": "force run",
+        "body": [
+            "(force|> ${1:expression})"
+        ],
+        "description": "force run expression"
+    },
+    "run": {
+        "prefix": "run",
+        "body": [
+            "(|> ${1:expression})"
+        ],
+        "description": "run expression"
+    },
+    "in?": {
+        "prefix": "in?",
+        "body": [
+            "(in? ${1:sequence} ${2:var})"
+        ],
+        "description": "to check if a var is in sequence"
+    },
+    "when": {
+        "prefix": "when",
+        "body": [
+            "(when",
+            "\t${1:condition}, ${2:expression}",
+            "\t${3:condition}, ${4:expression}",
+            ")"
+        ],
+        "description": "dispath condition and get relevant expression"
+    },
+    "sin": {
+        "prefix": "sin",
+        "body": [
+            "(sin ${1:value})"
+        ],
+        "description": "sin"
+    },
+    "cos-with-def": {
+        "prefix": "cos-with-def",
+        "body": [
+            "(if (! (def? cos))",
+            "\t(def cos a (if (!= (tan a) 0)",
+            "\t\t(/ (sin a) (tan a))",
+            "\t\t1",
+            ")",
+            "(cos ${1:value})"
+        ],
+        "description": "define and use cos"
+    },
+    "cos": {
+        "prefix": "cos",
+        "body": [
+            "(cos ${1:value})"
+        ],
+        "description": "cos"
+    },
+    "tan": {
+        "prefix": "tan",
+        "body": [
+            "(tan ${1:value})"
+        ],
+        "description": "tan"
+    },
+    "asin": {
+        "prefix": "asin",
+        "body": [
+            "(asin ${1:value})"
+        ],
+        "description": "arcsin"
+    },
+    "acos-with-def": {
+        "prefix": "acos-with-def",
+        "body": [
+            "(if (! (def? acos))",
+            "\t(def acos a (- (/ 3.14159 2) (asin a))))",
+            "(acos ${1:value})"
+        ],
+        "description": "define and use arccos"
+    },
+    "acos": {
+        "prefix": "acos",
+        "body": [
+            "(acos ${1:value})"
+        ],
+        "description": "arccos"
+    },
+    "atan": {
+        "prefix": "atan",
+        "body": [
+            "(atan ${1:value})"
+        ],
+        "description": "arctan"
+    },
+    "sinh": {
+        "prefix": "sinh",
+        "body": [
+            "(sinh ${1:value})"
+        ],
+        "description": "sinh"
+    },
+    "cosh-with-def": {
+        "prefix": "cosh-with-def",
+        "body": [
+            "(if (! (def? cosh))",
+            "\t(def cosh a",
+            "\t\t(/",
+            "\t\t\t(+ 1 (exp (* -2 a)))",
+            "\t\t\t(* 2 (exp (* -1 a)))",
+            "\t\t)",
+            "\t)",
+            ")",
+            "(cosh ${1:value})"
+        ],
+        "description": "define and use cosh"
+    },
+    "cosh": {
+        "prefix": "cosh",
+        "body": [
+            "(cosh ${1:value})"
+        ],
+        "description": "cosh"
+    },
+    "tanh": {
+        "prefix": "tanh",
+        "body": [
+            "(tanh ${1:value})"
+        ],
+        "description": "tanh"
+    },
+    "neg-with-def": {
+        "prefix": "neg-with-def",
+        "body": [
+            "(if (! (def? neg))",
+            "\t(def neg a (* -1 a))",
+            ")",
+            "(neg ${1:value})"
+        ],
+        "description": "get negative value with def"
+    },
+    "neg": {
+        "prefix": "neg",
+        "body": [
+            "(neg ${1:value})"
+        ],
+        "description": "get negative value"
+    },
+    "lazy": {
+        "prefix": "lazy",
+        "body": [
+            "(lazy ${1:name} ${2:expression})"
+        ],
+        "description": "lazy lambda"
+    },
+    "format": {
+        "prefix": "format",
+        "body": [
+            "(format \"${1:fmt}\" ${2:value})"
+        ],
+        "description": "format string"
+    },
+    "rand": {
+        "prefix": "rand",
+        "body": [
+            "(rand)"
+        ],
+        "description": "get a random number"
+    },
+    "sqrt": {
+        "prefix": "sqrt",
+        "body": [
+            "(sqrt ${1:value})"
+        ],
+        "description": "square root"
+    },
+    "exp": {
+        "prefix": "exp",
+        "body": [
+            "(exp ${1:value})"
+        ],
+        "description": "exponential function"
+    },
+    "log": {
+        "prefix": "log",
+        "body": [
+            "(log ${1:value})"
+        ],
+        "description": "natural log"
+    },
+    "log10": {
+        "prefix": "log10",
+        "body": [
+            "(log10 ${1:value})"
+        ],
+        "description": "log base 10"
+    },
+    "range": {
+        "prefix": "range",
+        "body": [
+            "(.. ${1:init} ${2:end})"
+        ],
+        "description": "range list"
+    },
+    "for-each": {
+        "prefix": "for-each",
+        "body": [
+            "(for-each ${1:item} ${2:sequence} ${3:function})"
+        ],
+        "description": "for each"
+    },
+    "head": {
+        "prefix": "head",
+        "body": [
+            "([| ${1:sequence})"
+        ],
+        "description": "first element of sequence"
+    },
+    "tail": {
+        "prefix": "tail",
+        "body": [
+            "(|] ${1:sequence})"
+        ],
+        "description": "all elements of sequence except the first one"
+    },
+    "last": {
+        "prefix": "last",
+        "body": [
+            "(last ${1:ls})"
+        ],
+        "description": "last element of list"
+    },
+    "index": {
+        "prefix": "index",
+        "body": [
+            "(!! ${1:ls} ${2:item})"
+        ],
+        "description": "index of an item in a list"
+    },
+    "reverse": {
+        "prefix": "reverse",
+        "body": [
+            "(reverse ${1:ls})"
+        ],
+        "description": "reverse a list"
+    },
+    "subtract": {
+        "prefix": "subtract",
+        "body": [
+            "(subtract ${1:originalLs} ${2:unwantedLs})"
+        ],
+        "description": "remove unwanted part from list"
+    },
+    "intersect": {
+        "prefix": "intersect",
+        "body": [
+            "(intersect ${1:lsOne} ${2:lsTwo})"
+        ],
+        "description": "intersect of two list"
+    },
+    "concat": {
+        "prefix": "concat",
+        "body": [
+            "(++ ${1:lsOne} ${2:lsTwo})"
+        ],
+        "description": "concat list two to list one"
+    },
+    "sort": {
+        "prefix": "sort",
+        "body": [
+            "(sort ${1:ls})"
+        ],
+        "description": "sort a list"
+    },
+    "count": {
+        "prefix": "count",
+        "body": [
+            "(count ${1:ls} ${2:item})"
+        ],
+        "description": "count the number of item in list"
+    },
+    "size": {
+        "prefix": "size",
+        "body": [
+            "(size ${1:ls})"
+        ],
+        "description": "get size of list"
+    },
+    "split": {
+        "prefix": "split",
+        "body": [
+            "(split ${1:ls} ${2:spliter})"
+        ],
+        "description": "split a list by spliter"
+    },
+    "as": {
+        "prefix": "as",
+        "body": [
+            "(->${1:type} {2:value})"
+        ],
+        "description": "return value as specific type"
+    },
+    "str-con": {
+        "prefix": "str-con",
+        "body": [
+            "(str-con ${1:strings})"
+        ],
+        "description": "concat strings"
+    }
+}
