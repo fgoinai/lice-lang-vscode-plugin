@@ -2,7 +2,8 @@
 	"name": "lice",
 	"displayName": "Lice",
 	"description": "Lice language VS Code plugin",
-	"version": "1.0.0",
+	"version": "1.0.2",
+	"icon": "images/icon.png",
 	"publisher": "FGO",
 	"license": "GPLv3",
 	"engines": {
