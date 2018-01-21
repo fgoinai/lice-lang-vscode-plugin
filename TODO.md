@@ -1,7 +1,7 @@
 ## Essential
-- Syntax highlighting
+- ~~Syntax highlighting~~
     + bracket highlighting by layer using different color
-- snippets
+- ~~snippets~~
 - eval
 
 ## May implemented
