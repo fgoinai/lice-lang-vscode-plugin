@@ -1,46 +1,63 @@
 {
-    "name": "lice",
-    "displayName": "Lice",
-    "description": "Lice language VS Code plugin",
-    "version": "1.0.0",
-    "publisher": "FGO",
-    "license": "GPLv3",
-    "engines": {
-        "vscode": "^1.19.0"
-    },
-    "keywords": [
-        "language",
-        "lice",
-        "lisp",
-        "highlight",
-        "syntax"
-    ],
-    "categories": [
-        "Languages"
-    ],
-    "homepage": "https://github.com/lice-lang/lice-lang-vscode-plugin",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/lice-lang/lice-lang-vscode-plugin.git"
-    },
-    "bugs": {
-        "email": "fgoinai@gmail.com",
-        "url": "https://github.com/lice-lang/lice-lang-vscode-plugin/issues"
-    },
-    "contributes": {
-        "languages": [{
-            "id": "lice",
-            "aliases": ["Lice", "lice"],
-            "extensions": [".lice"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "lice",
-            "scopeName": "source.lice",
-            "path": "./syntaxes/lice.tmLanguage.json"
-        }],
-        "snippets": [
-            {"language": "lice", "path": "./snippets/lice.json"}
-        ]
-    }
+	"name": "lice",
+	"displayName": "Lice",
+	"description": "Lice language VS Code plugin",
+	"version": "1.0.0",
+	"publisher": "FGO",
+	"license": "GPLv3",
+	"engines": {
+		"vscode": "^1.19.0"
+	},
+	"keywords": [
+		"language",
+		"lice",
+		"lisp",
+		"highlight",
+		"syntax"
+	],
+	"categories": [
+		"Languages"
+	],
+	"homepage": "https://github.com/lice-lang/lice-lang-vscode-plugin",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lice-lang/lice-lang-vscode-plugin.git"
+	},
+	"bugs": {
+		"email": "fgoinai@gmail.com",
+		"url": "https://github.com/lice-lang/lice-lang-vscode-plugin/issues"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "lice",
+				"aliases": [
+					"Lice",
+					"lice"
+				],
+				"extensions": [
+					".lice"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "lice",
+				"scopeName": "source.lice",
+				"path": "./syntaxes/lice.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "lice",
+				"path": "./snippets/lice.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "ac1d8982-3957-403a-8efc-7fed9481c691",
+		"publisherDisplayName": "FGO",
+		"publisherId": "673eff73-d0a7-47a1-acd6-b79ee7eb59a4"
+	}
 }
