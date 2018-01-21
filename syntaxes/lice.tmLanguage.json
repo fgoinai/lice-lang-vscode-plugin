@@ -2,28 +2,70 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Lice",
 	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
+		{ "include": "#keywords" },
+		{ "include": "#strings" },
+		{ "include": "#comments" },
+		{ "include": "#constants" },
+		{ "include": "#types" }
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.lice",
-				"match": "\\b(if|while|for-each|def|lambda|defexpr|deflazy|lazy|expr|undef|print)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.lice",
+					"match": "(if|while|when|for\\-each)(\\s|\\b)"
+				},
+				{
+					"name": "storage.modifier.lice",
+					"match": "(lazy|expr|force\\|>|\\|>)(\\s)"
+				},
+				{
+					"name": "entity.name.function.lice",
+					"match": "\\b(def|def\\?|deflazy|defexpr|lambda|undef)\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.lice",
 			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.lice"
+				}
+			},
 			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.lice"
+				}
+			},
 			"patterns": [
 				{
 					"name": "constant.character.escape.lice",
 					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.lice",
+					"match": ";.*$"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.lice",
+					"match": "\\b(true|false|null)\\b"}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "entity.name.type.lice",
+					"match": "\\b(str|double|bin|hex|int|oct|chars|list|array)\\b"
 				}
 			]
 		}
